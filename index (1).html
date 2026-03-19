@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eid Mubarak 2026</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode.js/1.4.4/qrcode.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <h1 class="title">🌙 Eid Mubarak 🌙</h1>
+            <p class="subtitle">March 21, 2026</p>
+        </header>
+
+        <!-- Input Section -->
+        <div class="input-section">
+            <div class="form-group">
+                <label for="name">Your Name (Optional):</label>
+                <input type="text" id="name" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+                <label for="message">Custom Message (Optional):</label>
+                <textarea id="message" placeholder="Add your Eid wishes..." rows="3"></textarea>
+            </div>
+            <button class="btn" onclick="generateLink()">Generate Greeting Link</button>
+        </div>
+
+        <!-- Display Section -->
+        <div class="display-section" id="displaySection" style="display: none;">
+            <div class="greeting-card">
+                <div class="decoration">🌙 ✨ 🎆</div>
+                <h2 id="greetingName">Eid Mubarak!</h2>
+                <p id="greetingMessage" class="greeting-text">Wishing you a blessed and joyful Eid!</p>
+                <div class="decoration">🌙 ✨ 🎆</div>
+            </div>
+
+            <!-- Share Section -->
+            <div class="share-section">
+                <h3>Share Your Eid Wishes</h3>
+                
+                <div class="share-buttons">
+                    <button class="share-btn whatsapp" onclick="shareWhatsApp()">
+                        📱 WhatsApp
+                    </button>
+                    <button class="share-btn facebook" onclick="shareFacebook()">
+                        👍 Facebook
+                    </button>
+                    <button class="share-btn twitter" onclick="shareTwitter()">
+                        𝕏 Twitter
+                    </button>
+                    <button class="share-btn copy" onclick="copyLink()">
+                        🔗 Copy Link
+                    </button>
+                </div>
+
+                <!-- QR Code Section -->
+                <div class="qr-section">
+                    <h4>Share via QR Code</h4>
+                    <div id="qrcode" class="qr-container"></div>
+                    <button class="btn" onclick="downloadQR()">📥 Download QR Code</button>
+                </div>
+
+                <!-- URL Display -->
+                <div class="url-section">
+                    <p>Your Greeting Link:</p>
+                    <input type="text" id="urlInput" readonly class="url-input">
+                </div>
+            </div>
+
+            <button class="btn btn-secondary" onclick="resetForm()">Create Another</button>
+        </div>
+
+        <!-- View Greeting Section -->
+        <div class="view-greeting" id="viewGreeting" style="display: none;">
+            <div class="greeting-card large-card">
+                <div class="decoration-large">🌙 ✨ 🎆 ✨ 🌙</div>
+                <h1 id="viewName" class="view-title">Eid Mubarak!</h1>
+                <p id="viewMessage" class="view-message"></p>
+                <div class="decoration-large">🌙 ✨ 🎆 ✨ 🌙</div>
+                <p class="sender-text" id="senderText"></p>
+            </div>
+            <button class="btn" onclick="location.reload()">Send Your Own Eid Wishes</button>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
